@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { LearnersStyle } from "./learners-style";
 const LearnersTodayComponent = () => {
+  const [count, setCount] = useState(100);
+
   return (
     <LearnersStyle>
       <div className="element">
@@ -8,10 +10,18 @@ const LearnersTodayComponent = () => {
           <div className="title">Learners Today, Leaders Tomorrow</div>
           <div className="subtitle">
             With our continuous research and development, we provide you with an
-            excellent Aptitude training.
+            excellent Aptitude training.{count}
           </div>
         </div>
-        <button className="button__style">Register Now</button>
+        <button
+          className="button__style"
+          onClick={() => {
+            // setCount(99);
+            setCount(count + 1);
+          }}
+        >
+          Register Now
+        </button>
       </div>
     </LearnersStyle>
   );
