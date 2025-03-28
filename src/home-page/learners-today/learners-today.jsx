@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LearnersStyle } from "./learners-style";
 const LearnersTodayComponent = () => {
   const [count, setCount] = useState(100);
-
+  const [countNumber, setCountNumber] = useState(0);
+  useEffect(() => {
+    setCountNumber(countNumber + 1);
+  }, [count]);
   return (
     <LearnersStyle>
       <div className="element">
@@ -11,6 +14,7 @@ const LearnersTodayComponent = () => {
           <div className="subtitle">
             With our continuous research and development, we provide you with an
             excellent Aptitude training.{count}
+            count Number{countNumber}
           </div>
         </div>
         <button
