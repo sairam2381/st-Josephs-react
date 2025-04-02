@@ -22,7 +22,7 @@ const OurpromisesComponent = () => {
         </h2>
       </div>
       <div className="element">
-        <div className="element__item">
+        <div className="element__item child1">
           <div className="item">
             <FontAwesomeIcon icon={faLaptopCode} size="2xl" color="#44b2b3" />
             <div className="item__title">Top code quality</div>
@@ -34,7 +34,7 @@ const OurpromisesComponent = () => {
           </div>
         </div>
 
-        <div className="element__item">
+        <div className="element__item child2">
           <div className="item">
             <FontAwesomeIcon
               icon={faTabletScreenButton}
@@ -49,7 +49,7 @@ const OurpromisesComponent = () => {
             listening and leveraging our utmost capabilities to serve you.
           </div>
         </div>
-        <div className="element__item">
+        <div className="element__item child3">
           <div className="item">
             <FontAwesomeIcon icon={faPeopleGroup} size="2xl" color="#00bded" />
             <div className="item__title">Rockstar Team</div>
@@ -60,7 +60,7 @@ const OurpromisesComponent = () => {
             serving you, armed with coding skills that are truly exceptional
           </div>
         </div>
-        <div className="element__item">
+        <div className="element__item child4">
           <div className="item">
             <FontAwesomeIcon
               icon={faDiamondTurnRight}
@@ -75,7 +75,7 @@ const OurpromisesComponent = () => {
             timeframe that suits your preferences.
           </div>
         </div>
-        <div className="element__item">
+        <div className="element__item child5">
           <div className="item">
             <FontAwesomeIcon icon={faLifeRing} size="2xl" color="#fc2947" />
             <div className="item__title">Life-time support</div>
@@ -86,7 +86,7 @@ const OurpromisesComponent = () => {
             reach out to us for assistance.
           </div>
         </div>
-        <div className="element__item">
+        <div className="element__item child6">
           <div className="item">
             <FontAwesomeIcon icon={faShieldHalved} size="2xl" color="#32c766" />
             <div className="item__title">Secured Agreement</div>

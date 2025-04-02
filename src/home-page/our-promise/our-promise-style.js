@@ -28,7 +28,6 @@ export const OurpromiseStyle = styled.div`
     display: flex;
     gap: 20px;
     flex-direction: column;
-    border-top: 4px solid blue;
     background-color: #fff;
     padding: 1.5rem;
     max-width: 380px;
@@ -47,5 +46,23 @@ export const OurpromiseStyle = styled.div`
     font-weight: 400;
     font-size: 18px;
     color: #566683;
+  }
+  .child1 {
+    border-top: 4px solid #44b2b3;
+  }
+  .child2 {
+    border-top: 4px solid #efaf4b;
+  }
+  .child3 {
+    border-top: 4px solid #00bdeb;
+  }
+  .child4 {
+    border-top: 4px solid #864af9;
+  }
+  .child5 {
+    border-top: 4px solid #fc2947;
+  }
+  .child6 {
+    border-top: 4px solid #32c766;
   }
 `;
