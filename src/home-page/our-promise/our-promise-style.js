@@ -28,5 +28,24 @@ export const OurpromiseStyle = styled.div`
     display: flex;
     gap: 20px;
     flex-direction: column;
+    border-top: 4px solid blue;
+    background-color: #fff;
+    padding: 1.5rem;
+    max-width: 380px;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .item__title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #777;
+  }
+  .element__content {
+    font-weight: 400;
+    font-size: 18px;
+    color: #566683;
   }
 `;

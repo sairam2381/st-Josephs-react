@@ -24,7 +24,7 @@ const OurpromisesComponent = () => {
       <div className="element">
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faLaptopCode} />
+            <FontAwesomeIcon icon={faLaptopCode} size="2xl" color="#44b2b3" />
             <div className="item__title">Top code quality</div>
           </div>
           <div className="element__content">
@@ -33,20 +33,14 @@ const OurpromisesComponent = () => {
             compromise on quality.
           </div>
         </div>
+
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faCircleUser} />
-            <div className="item__title">Top code quality</div>
-          </div>
-          <div className="element__content">
-            Our commitment goes beyond mere code - it encompasses providing
-            solutions. You receive W3C fully compliant markup, without any
-            compromise on quality.
-          </div>
-        </div>
-        <div className="element__item">
-          <div className="item">
-            <FontAwesomeIcon icon={faTabletScreenButton} />
+            <FontAwesomeIcon
+              icon={faTabletScreenButton}
+              size="2xl"
+              color="#efaf4b"
+            />
             <div className="item__title">Responsive</div>
           </div>
           <div className="element__content">
@@ -57,7 +51,7 @@ const OurpromisesComponent = () => {
         </div>
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faPeopleGroup} />
+            <FontAwesomeIcon icon={faPeopleGroup} size="2xl" color="#00bded" />
             <div className="item__title">Rockstar Team</div>
           </div>
           <div className="element__content">
@@ -68,7 +62,11 @@ const OurpromisesComponent = () => {
         </div>
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faDiamondTurnRight} />
+            <FontAwesomeIcon
+              icon={faDiamondTurnRight}
+              size="2xl"
+              color="#864AF9"
+            />
             <div className="item__title">Fast Turn-arounds</div>
           </div>
           <div className="element__content">
@@ -79,7 +77,7 @@ const OurpromisesComponent = () => {
         </div>
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faLifeRing} />
+            <FontAwesomeIcon icon={faLifeRing} size="2xl" color="#fc2947" />
             <div className="item__title">Life-time support</div>
           </div>
           <div className="element__content">
@@ -90,7 +88,7 @@ const OurpromisesComponent = () => {
         </div>
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faShieldHalved} />
+            <FontAwesomeIcon icon={faShieldHalved} size="2xl" color="#32c766" />
             <div className="item__title">Secured Agreement</div>
           </div>
           <div className="element__content">
