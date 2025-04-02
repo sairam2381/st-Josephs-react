@@ -8,23 +8,30 @@ import {
   faDiamondTurnRight,
   faLifeRing,
   faShieldHalved,
+  faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { OurpromiseStyle } from "./our-promise-style";
 const OurpromisesComponent = () => {
   return (
     <OurpromiseStyle>
-      <h1 className="title">Our promise</h1>
-      <h2 className="sub__title">
-        As part of our high quality service, we'd like to offer something extra
-        too.
-      </h2>
+      <div>
+        <h1 className="title">Our promise</h1>
+        <h2 className="sub__title">
+          As part of our high quality service, we'd like to offer something
+          extra too.
+        </h2>
+      </div>
       <div className="element">
         <div className="element__item">
           <div className="item">
-            <FontAwesomeIcon icon={faLaptop} size="3x" />
+            <FontAwesomeIcon icon={faLaptopCode} />
+            <div className="item__title">Top code quality</div>
           </div>
-          <div className="element__content"></div>
+          <div className="element__content">
+            Our commitment goes beyond mere code - it encompasses providing
+            solutions. You receive W3C fully compliant markup, without any
+            compromise on quality.
+          </div>
         </div>
         <div className="element__item">
           <div className="item">
