@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  ButtonStyle,
   Container,
   UserCard,
   UserInfo,
@@ -9,11 +10,12 @@ import {
 const UserPageComponent = () => {
   const [isLoaded, setLoaded] = useState(false);
   const [userDetails, setUserDetails] = useState([]);
+  const [page, setPage] = useState(1);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users/2"
+          `https://jsonplaceholder.typicode.com/users/${page}`
           //   "https://jsonplaceholder.typicode.com/todos/1"
         );
         let ans = await response.json();
@@ -30,7 +32,7 @@ const UserPageComponent = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [page]);
   console.log("The user details is:", userDetails);
 
   return (
@@ -48,6 +50,22 @@ const UserPageComponent = () => {
               </UserCard>
             );
           })}
+          <ButtonStyle>
+            <button
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >
+              Next
+            </button>
+            <button
+              onClick={() => {
+                setPage(page - 1);
+              }}
+            >
+              Prev
+            </button>
+          </ButtonStyle>
         </UserList>
       )}
     </Container>

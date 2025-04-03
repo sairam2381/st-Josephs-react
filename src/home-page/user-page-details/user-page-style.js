@@ -57,3 +57,8 @@ export const Loader = styled.div`
   animation: ${spin} 1s linear infinite;
   margin: 50px auto;
 `;
+export const ButtonStyle = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+`;
