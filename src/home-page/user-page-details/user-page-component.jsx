@@ -7,6 +7,7 @@ import {
   UserName,
 } from "./user-page-style";
 const UserPageComponent = () => {
+  const [isLoaded, setLoaded] = useState(false);
   const [userDetails, setUserDetails] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -16,10 +17,14 @@ const UserPageComponent = () => {
           //   "https://jsonplaceholder.typicode.com/todos/1"
         );
         const ans = await response.json();
-        console.log("Checked:", ans);
-
-        setUserDetails(ans);
+        console.log("Checked:", ans.completed);
+        if (ans.completed === false) {
+          setLoaded(true);
+        } else {
+          setUserDetails(ans);
+        }
       } catch (e) {
+        setLoaded(true);
         console.log("The error is", e);
       }
     };
@@ -29,18 +34,21 @@ const UserPageComponent = () => {
 
   return (
     <Container>
-      <h1>Users</h1>
-      <UserList>
-        {userDetails.map((item, index) => {
-          return (
-            <UserCard key={index}>
-              <UserName>{item.name}</UserName>
-              <UserInfo>Email:{item.email}</UserInfo>
-              <UserInfo>Mobile: {item.phone}</UserInfo>
-            </UserCard>
-          );
-        })}
-      </UserList>
+      {isLoaded === true ? (
+        <h1>No data found</h1>
+      ) : (
+        <UserList>
+          {userDetails.map((item, index) => {
+            return (
+              <UserCard key={index}>
+                <UserName>{item.name}</UserName>
+                <UserInfo>Email:{item.email}</UserInfo>
+                <UserInfo>Mobile: {item.phone}</UserInfo>
+              </UserCard>
+            );
+          })}
+        </UserList>
+      )}
     </Container>
   );
 };
