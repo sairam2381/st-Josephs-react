@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import {
+  Container,
+  UserCard,
+  UserInfo,
+  UserList,
+  UserName,
+} from "./user-page-style";
 const UserPageComponent = () => {
   const [userDetails, setUserDetails] = useState([]);
   useEffect(() => {
@@ -20,6 +27,21 @@ const UserPageComponent = () => {
   }, []);
   console.log("The user details is:", userDetails);
 
-  return <h1>Hello world</h1>;
+  return (
+    <Container>
+      <h1>Users</h1>
+      <UserList>
+        {userDetails.map((item, index) => {
+          return (
+            <UserCard key={index}>
+              <UserName>{item.name}</UserName>
+              <UserInfo>Email:{item.email}</UserInfo>
+              <UserInfo>Mobile: {item.phone}</UserInfo>
+            </UserCard>
+          );
+        })}
+      </UserList>
+    </Container>
+  );
 };
 export default UserPageComponent;
