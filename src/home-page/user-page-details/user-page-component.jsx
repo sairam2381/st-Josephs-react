@@ -7,10 +7,12 @@ const UserPageComponent = () => {
         "https://jsonplaceholder.typicode.com/todos/1"
       );
       const ans = await response.json();
-      console.log("Answer:", ans);
+      setUserDetails(ans);
     };
     fetchData();
   }, []);
+  console.log("The user details is:", userDetails);
+
   return <h1>Hello world</h1>;
 };
 export default UserPageComponent;
