@@ -1,4 +1,5 @@
 import UseStateComponent from "./home-page/use-state-demo/use-state-component";
+import UserPageComponent from "./home-page/user-page-details/user-page-component";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       {/* <DummyComponent /> */}
       {/* <OurpromisesComponent /> */}
       {/* <WeatherAppComponent /> */}
-      <UseStateComponent />
+      {/* <UseStateComponent /> */}
+      <UserPageComponent />
     </div>
   );
 }
