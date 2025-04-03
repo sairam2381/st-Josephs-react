@@ -13,8 +13,16 @@ const UserPageComponent = () => {
   const [page, setPage] = useState(1);
   const pageChange = (direction) => {
     if (direction == -1) {
+      if (page == 1) {
+        alert("Your are exceeding the point");
+        return;
+      }
       setPage(page - 1);
     } else {
+      if (page == 10) {
+        alert("Your are exceeding the point");
+        return;
+      }
       setPage(page + 1);
     }
   };
@@ -40,7 +48,6 @@ const UserPageComponent = () => {
     };
     fetchData();
   }, [page]);
-  console.log("The user details is:", userDetails);
 
   return (
     <Container>
