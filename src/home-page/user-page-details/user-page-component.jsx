@@ -13,10 +13,11 @@ const UserPageComponent = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users"
+          "https://jsonplaceholder.typicode.com/users/2"
           //   "https://jsonplaceholder.typicode.com/todos/1"
         );
-        const ans = await response.json();
+        let ans = await response.json();
+        ans = Array.isArray(ans) ? ans : [ans];
         console.log("Checked:", ans.completed);
         if (ans.completed === false) {
           setLoaded(true);
@@ -38,12 +39,12 @@ const UserPageComponent = () => {
         <h1>No data found</h1>
       ) : (
         <UserList>
-          {userDetails.map((item, index) => {
+          {userDetails?.map((item, index) => {
             return (
               <UserCard key={index}>
-                <UserName>{item.name}</UserName>
-                <UserInfo>Email:{item.email}</UserInfo>
-                <UserInfo>Mobile: {item.phone}</UserInfo>
+                <UserName>{item?.name}</UserName>
+                <UserInfo>Email:{item?.email}</UserInfo>
+                <UserInfo>Mobile: {item?.phone}</UserInfo>
               </UserCard>
             );
           })}
