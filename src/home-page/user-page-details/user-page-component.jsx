@@ -11,6 +11,13 @@ const UserPageComponent = () => {
   const [isLoaded, setLoaded] = useState(false);
   const [userDetails, setUserDetails] = useState([]);
   const [page, setPage] = useState(1);
+  const pageChange = (direction) => {
+    if (direction == -1) {
+      setPage(page - 1);
+    } else {
+      setPage(page + 1);
+    }
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -53,14 +60,14 @@ const UserPageComponent = () => {
           <ButtonStyle>
             <button
               onClick={() => {
-                setPage(page + 1);
+                pageChange(1);
               }}
             >
               Next
             </button>
             <button
               onClick={() => {
-                setPage(page - 1);
+                pageChange(-1);
               }}
             >
               Prev
