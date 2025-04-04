@@ -18,7 +18,7 @@ const UserPageComponent = () => {
         return;
       }
       setPage(page - 1);
-    } else {
+    } else {//
       if (page == 10) {
         alert("Your are exceeding the point");
         return;
