@@ -7,6 +7,7 @@ import {
   UserList,
   UserName,
 } from "./user-page-style";
+import axios from "axios";
 const UserPageComponent = () => {
   const [isLoaded, setLoaded] = useState(false);
   const [userDetails, setUserDetails] = useState([]);
@@ -18,7 +19,8 @@ const UserPageComponent = () => {
         return;
       }
       setPage(page - 1);
-    } else {//
+    } else {
+      //
       if (page == 10) {
         alert("Your are exceeding the point");
         return;
@@ -29,25 +31,38 @@ const UserPageComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://jsonplaceholder.typicode.com/users/${page}`
-          //   "https://jsonplaceholder.typicode.com/todos/1"
+        const response = await axios.get(
+          "http://localhost:25000/api/v1/user/getUser",
+          {
+            withCredentials: true,
+            rejectUnauthorized: false,
+          }
         );
-        let ans = await response.json();
-        ans = Array.isArray(ans) ? ans : [ans];
-        console.log("Checked:", ans.completed);
-        if (ans.completed === false) {
-          setLoaded(true);
+        console.log("The response:", response.data);
+
+        // const ans = Array.isArray(response.data)
+        //   ? response.data
+        //   : [response.data];
+        // console.log("Checked:", ans[0]?.completed);
+
+        // if (ans[0]?.completed === false) {
+        //   setLoaded(true);
+        // } else {
+        //   setUserDetails(ans);
+        // }
+        if (response.data.success === true) {
+          setUserDetails(response.data.data123);
         } else {
-          setUserDetails(ans);
+          setLoaded(true);
         }
       } catch (e) {
         setLoaded(true);
         console.log("The error is", e);
       }
     };
+
     fetchData();
-  }, [page]);
+  }, [page, setUserDetails]);
 
   return (
     <Container>
@@ -60,7 +75,7 @@ const UserPageComponent = () => {
               <UserCard key={index}>
                 <UserName>{item?.name}</UserName>
                 <UserInfo>Email:{item?.email}</UserInfo>
-                <UserInfo>Mobile: {item?.phone}</UserInfo>
+                <UserInfo>Mobile: {item?.age}</UserInfo>
               </UserCard>
             );
           })}
