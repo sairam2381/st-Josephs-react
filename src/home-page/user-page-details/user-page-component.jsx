@@ -32,7 +32,7 @@ const UserPageComponent = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:25000/api/v1/user/getUser",
+          "http://localhost:25000/api/v1/user/getName",
           {
             withCredentials: true,
             rejectUnauthorized: false,
