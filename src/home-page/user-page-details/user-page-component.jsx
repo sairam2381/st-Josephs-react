@@ -10,7 +10,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const UserPageComponent = () => {
+  const navigate = useNavigate();
   const [isLoaded, setLoaded] = useState(false);
   const [userDetails, setUserDetails] = useState([]);
   const [page, setPage] = useState(1);
@@ -72,7 +74,14 @@ const UserPageComponent = () => {
         <h1>No data found</h1>
       ) : (
         <UserList>
-          <button class="add-details-btn">Add Details</button>
+          <button
+            class="add-details-btn"
+            onClick={() => {
+              navigate("/user-form");
+            }}
+          >
+            Add Details
+          </button>
           {userDetails?.map((item, index) => {
             return (
               <div className="element__item">
