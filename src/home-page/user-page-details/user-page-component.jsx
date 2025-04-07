@@ -7,6 +7,8 @@ import {
   UserList,
   UserName,
 } from "./user-page-style";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 const UserPageComponent = () => {
   const [isLoaded, setLoaded] = useState(false);
@@ -70,16 +72,26 @@ const UserPageComponent = () => {
         <h1>No data found</h1>
       ) : (
         <UserList>
+          <button class="add-details-btn">Add Details</button>
           {userDetails?.map((item, index) => {
             return (
-              <UserCard key={index}>
-                <UserName>{item?.name}</UserName>
-                <UserInfo>Email:{item?.email}</UserInfo>
-                <UserInfo>Mobile: {item?.age}</UserInfo>
-              </UserCard>
+              <div className="element__item">
+                <UserCard key={index}>
+                  <UserName>{item?.name}</UserName>
+                  <UserInfo>Email:{item?.email}</UserInfo>
+                  <UserInfo>Mobile: {item?.age}</UserInfo>
+                  <UserInfo>Mobile: {item?.name}</UserInfo>
+                </UserCard>
+                <div className="dust__bin">
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className="text-gray-700 text-xl hover:text-red-600 transition-colors duration-200"
+                  />
+                </div>
+              </div>
             );
           })}
-          <ButtonStyle>
+          {/* <ButtonStyle>
             <button
               onClick={() => {
                 pageChange(1);
@@ -94,7 +106,7 @@ const UserPageComponent = () => {
             >
               Prev
             </button>
-          </ButtonStyle>
+          </ButtonStyle> */}
         </UserList>
       )}
     </Container>

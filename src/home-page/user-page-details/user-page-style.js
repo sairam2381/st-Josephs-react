@@ -17,6 +17,43 @@ export const Title = styled.h1`
 export const UserList = styled.ul`
   list-style: none;
   padding: 0;
+  .element__item {
+    position: relative;
+  }
+  .dust__bin {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    color: #4b5563;
+    font-size: 1.25rem;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: #dc2626;
+    }
+  }
+  .add-details-btn {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out, transform 0.2s;
+  }
+
+  .add-details-btn:hover {
+    background-color: #1e40af; /* Blue-700 */
+    transform: translateY(-2px);
+  }
+
+  .add-details-btn:active {
+    background-color: #1c3faa;
+    transform: translateY(0);
+  }
 `;
 
 export const UserCard = styled.li`

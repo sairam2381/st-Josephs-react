@@ -1,17 +1,26 @@
-import UseStateComponent from "./home-page/use-state-demo/use-state-component";
+import { Route, Routes } from "react-router-dom";
 import UserPageComponent from "./home-page/user-page-details/user-page-component";
-
+import HeroPageComponent from "./home-page/hero-page/hero-page-component";
+import DummyComponent from "./home-page/dummy/dummy-component";
 function App() {
   return (
-    <div>
+    <Routes>
       {/* <HeroPageComponent /> */}
       {/* <LearnersTodayComponent /> */}
       {/* <DummyComponent /> */}
       {/* <OurpromisesComponent /> */}
       {/* <WeatherAppComponent /> */}
       {/* <UseStateComponent /> */}
-      <UserPageComponent />
-    </div>
+      {/* <Route /> */}
+      {/* <Route path="/user" element={<UserPageComponent />} />
+      <Route path="/hero-page" element={<HeroPageComponent />} />
+      <Route path="/" element={<DummyComponent />} /> */}
+      <Route path="/quiz">
+        <Route index element={<DummyComponent />} />
+        <Route path="user" element={<UserPageComponent />} />
+        <Route path="hero-page" element={<HeroPageComponent />} />
+      </Route>
+    </Routes>
   );
 }
 
