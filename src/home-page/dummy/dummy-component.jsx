@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const DummyComponent = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState([
+    { name: "xyz", age: 18 },
+    { name: "ght", age: 20 },
+  ]);
+  const [fruits, setFruits] = useState(["Apple", "Mango"]);
+  const addFruit = () => {
+    setFruits([...fruits, "Banana"]);
+  };
+  const addName = () => {
+    setName([...name, { name: "abc", age: 25 }]);
+  };
   return (
     <div>
       <h1>Hello world</h1>

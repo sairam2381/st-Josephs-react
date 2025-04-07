@@ -17,9 +17,11 @@ function App() {
       <Route path="/" element={<DummyComponent />} /> */}
       <Route path="/quiz">
         <Route index element={<DummyComponent />} />
+
         <Route path="user" element={<UserPageComponent />} />
         <Route path="hero-page" element={<HeroPageComponent />} />
       </Route>
+      <Route path="/:id" element={<DummyComponent />} />
     </Routes>
   );
 }
