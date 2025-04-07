@@ -7,11 +7,17 @@ import {
 } from "./use-form-style";
 const UseFormComponent = () => {
   const [details, setDetails] = useState({
-    name: "",
+    name123: "",
     email: "",
     mobile: "",
     address: "",
   });
+  //   const obj = { name: "sairam", age: 18 };
+  const handleChange = (e) => {
+    setDetails({ ...details, [e.target.name]: e.target.value });
+    // console.log(e.target.name, ":", e.target.value);
+    // obj.name1234 = "manoj";
+  };
   return (
     <FormContainer>
       <Heading>User details</Heading>
@@ -20,28 +26,28 @@ const UseFormComponent = () => {
           type="text"
           name="name"
           placeholder="Name"
-          value=""
+          onChange={handleChange}
           required
         />
         <InputField
           type="email"
-          name="email"
+          name="email123"
           placeholder="Enter your email id"
-          value=""
+          onChange={handleChange}
           required
         />
         <InputField
           type="number"
           name="mobile"
           placeholder="Enter your mobile number"
-          value=""
+          onChange={handleChange}
           required
         />
         <InputField
           type="text"
           name="address"
           placeholder="Enter your address"
-          value=""
+          onChange={handleChange}
           required
         />
         <SubmitButton type="submit">Submit</SubmitButton>
